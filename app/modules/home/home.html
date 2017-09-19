@@ -7,6 +7,7 @@
       <th>Date</th>
       <th>Open Price</th>
       <th>Close Price</th>
+      <th>Delta</th>
     </thead>
     <tbody>
       <tr data-ng-repeat="price in vm.prices">
@@ -21,6 +22,9 @@
         </td>
         <td style="text-align: right;">
           {{price.close_price}}
+        </td>
+        <td style="text-align: right;">
+          {{price.open_close_delta_price}}
         </td>
       </tr>
     </tbody>
