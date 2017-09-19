@@ -1,0 +1,90 @@
+.with-sidebar {
+  .main-content-wrapper {
+    width: 100%;
+    height: 100%;
+    @include media($desktop) {
+      position: absolute;
+      left: $width-sidebar;
+      top: $height-navigation;
+      right: 0;
+      bottom: 0;
+      height: auto;
+      width: auto;
+    }
+    @include media($mobile) {
+      position: absolute;
+      top: $height-navigation-mobile;
+      bottom: $height-sidebar-mobile;
+      height: auto;
+    }
+
+    .main-content {
+      height: 100%;
+      width: 100%;
+    }
+  }
+
+  .sidebar {
+    a {
+      color: inherit;
+      text-decoration: inherit;
+    }
+    @include media($mobile) {
+      left: 0;
+      bottom: 0;
+      height: $height-sidebar-mobile;
+      width: 100%;
+      position: absolute;
+    }
+    @include media($desktop) {
+      display: inline-block;
+      width: $width-sidebar;
+      top: $height-navigation;
+      bottom: 0;
+      position: absolute;
+    }
+    background-color: $color-sidebar-background;
+    color: $color-sidebar-filter-text;
+    padding: 1rem;
+    overflow: hidden;
+    &.full {
+      @include media($mobile) {
+        top: $height-navigation-mobile;
+      }
+      top: $height-navigation;
+      bottom: 0;
+      height: auto;
+    }
+
+    .list {
+      overflow-y: auto;
+      bottom: 0;
+      position: absolute;
+      top: 5rem;
+      padding-right: 0.5rem;
+    }
+  }
+}
+
+.hidden-sidebar {
+  @include media($mobile) {
+    &.main-content-wrapper {
+      height: 100%;
+    }
+    &.sidebar {
+      display: none !important;
+    }
+  }
+}
+
+.hidden {
+  display: none !important;
+}
+
+.push-behind {
+  &#map {
+    position: absolute !important;
+    left: -100% !important;
+    top: -100% !important;
+  }
+}

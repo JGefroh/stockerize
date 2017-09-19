@@ -1,0 +1,36 @@
+$breakpoint-mobile: 420px;
+
+$color-black: #231f20;
+$color-primary: #e8e2b5;
+$color-primary-light: #e8e2b5;
+$color-accent-primary: #f68717;
+$color-accent-secondary: #00a363;
+$color-subtless: #A1A1A1;
+$color-subtle: #D1D1D1;
+$color-subtler: #F1F1F1;
+$color-error: red;
+$color-info: #4e6d93;
+
+
+
+
+
+//App variables
+$color-sidebar-background: $color-primary-light;
+$color-sidebar-text: $color-black;
+$color-sidebar-filter-text: $color-black;
+$color-sidebar-filter-active: $color-accent-primary;
+$color-button: $color-sidebar-background;
+$color-button-background: $color-accent-secondary;
+$color-button-danger: $color-sidebar-background;
+$color-button-danger-background: $color-error;
+$color-button-info: $color-sidebar-background;
+$color-button-info-background: $color-info;
+
+
+$color-list-primary: $color-sidebar-filter-active;
+$color-list-secondary: $color-sidebar-background;
+$width-sidebar: 24rem;
+$height-sidebar-mobile: 20%;
+$height-navigation: 6rem;
+$height-navigation-mobile: 4rem;

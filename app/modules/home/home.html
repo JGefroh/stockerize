@@ -1,0 +1,28 @@
+<div>
+  <input data-ng-model="vm.criteria" placeholder="tickers"/>
+  <button data-ng-click="vm.search(vm.criteria)">Search</button>
+  <table>
+    <thead>
+      <th>Ticker</th>
+      <th>Date</th>
+      <th>Open Price</th>
+      <th>Close Price</th>
+    </thead>
+    <tbody>
+      <tr data-ng-repeat="price in vm.prices">
+        <td>
+          {{price.ticker}}
+        </td>
+        <td>
+          {{price.date}}
+        </td>
+        <td style="text-align: right;">
+          {{price.open_price}}
+        </td>
+        <td style="text-align: right;">
+          {{price.close_price}}
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</div>

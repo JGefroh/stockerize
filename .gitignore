@@ -1,0 +1,6 @@
+node_modules
+app.min.js
+.sass-cache
+bower_components
+public
+.DS_Store

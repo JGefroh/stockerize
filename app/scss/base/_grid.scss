@@ -1,0 +1,28 @@
+$mobile: new-breakpoint(max-width 640px 12);
+$desktop: new-breakpoint(min-width 640px 12);
+
+
+.container {
+  @include outer-container();
+}
+.row {
+  @include row();
+}
+
+.col-xs-6 {
+  @include span-columns(6);
+}
+
+
+
+.hidden-mobile {
+  @include media($mobile) {
+    display: none !important;
+  }
+}
+
+.hidden-desktop {
+  @include media($desktop) {
+    display: none !important;
+  }
+}

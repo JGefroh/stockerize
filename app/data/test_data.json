@@ -1,0 +1,30 @@
+[
+  {
+    "ticker": "GOOG",
+    "open_price": 144.33,
+    "close_price": 43.22,
+    "volume": 2214,
+    "date": "2017-01-01"
+  },
+  {
+    "ticker": "GOOG",
+    "open_price": 334.33,
+    "close_price": 23.22,
+    "volume": 2414,
+    "date": "2017-01-02"
+  },
+  {
+    "ticker": "GOOG",
+    "open_price": 1134.33,
+    "close_price": 53.22,
+    "volume": 2244,
+    "date": "2017-01-03"
+  },
+  {
+    "ticker": "GOOG",
+    "open_price": 224.33,
+    "close_price": 41.22,
+    "volume": 2244,
+    "date": "2017-01-04"
+  }
+]
