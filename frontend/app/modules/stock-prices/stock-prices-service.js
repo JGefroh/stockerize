@@ -21,8 +21,8 @@
       })
     }
 
-    service.getDailyPrices = function(stock_id) {
-      return $http.get(URL + '/stock_prices', {params: {stock_id: stock_id}}).then(function(response) {
+    service.getDailyPrices = function(stock_id, ticker) {
+      return $http.get(URL + '/stock_prices', {params: {stock_id: stock_id, ticker: ticker}}).then(function(response) {
         postProcess(response.data);
         return response.data;
       })

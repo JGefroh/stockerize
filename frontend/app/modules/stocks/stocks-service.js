@@ -18,16 +18,6 @@
       })
     };
 
-    function stockWithId(data, id) {
-      var match = null;
-      angular.forEach(data, function(stock) {
-        if (stock.id == id) {
-          match = stock;
-        }
-      });
-      return match;
-    }
-
     service.updateStats = function(stock) {
       calculateAverageVolume(stock);
       calculateLosingDays(stock);
