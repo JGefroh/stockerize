@@ -16,15 +16,15 @@ ActiveRecord::Schema.define(version: 20170920011641) do
   enable_extension "plpgsql"
 
   create_table "stock_prices", force: :cascade do |t|
-    t.integer  "close_price_cents",    default: 0,     null: false
+    t.bigint   "close_price_cents",    default: 0,     null: false
     t.string   "close_price_currency", default: "USD", null: false
-    t.integer  "open_price_cents",     default: 0,     null: false
+    t.bigint   "open_price_cents",     default: 0,     null: false
     t.string   "open_price_currency",  default: "USD", null: false
-    t.integer  "low_price_cents",      default: 0,     null: false
+    t.bigint   "low_price_cents",      default: 0,     null: false
     t.string   "low_price_currency",   default: "USD", null: false
-    t.integer  "high_price_cents",     default: 0,     null: false
+    t.bigint   "high_price_cents",     default: 0,     null: false
     t.string   "high_price_currency",  default: "USD", null: false
-    t.integer  "volume",               default: 0
+    t.bigint   "volume",               default: 0,     null: false
     t.string   "ticker"
     t.integer  "stock_id",                             null: false
     t.date     "date"
