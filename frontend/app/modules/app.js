@@ -28,7 +28,7 @@
         templateUrl: '404.html'
       });
     }])
-    .constant('config')
+    .constant('config', {webServiceBase: webServiceBase})
     .controller('ApplicationController', ['$sce', '$rootScope', '$scope', '$state',function($sce, $rootScope, $scope, $state) {
       var vm = this;
     }]);

@@ -1,15 +1,15 @@
 (function() {
   angular
     .module('stockerize.stock-prices')
-    .service('StockPricesService', ['$http', Service]);
+    .service('StockPricesService', ['$http', 'config', Service]);
 
-  function Service($http) {
+  function Service($http, config) {
     var service = this;
-    var URL ='https://www.quandl.com/api/v3/datatables/WIKI/PRICES.json'
-    URL = './data/stock-prices.json'
+    var URL = config.webServiceBase;
+    console.info(URL);
 
     service.get = function(id) {
-      return $http.get(URL).then(function(response) {
+      return $http.get(URL + '/stock_prices/').then(function(response) {
         postProcess(response.data);
         return response.data[0];
       })
@@ -23,7 +23,7 @@
     }
 
     service.getDailyPrices = function(stock_id) {
-      return $http.get(URL).then(function(response) {
+      return $http.get(URL + '/stock_prices/').then(function(response) {
         postProcess(response.data);
         return withStockId(response.data, stock_id);
       })
@@ -31,8 +31,8 @@
 
     function postProcess(data) {
       angular.forEach(data, function(price) {
-        price.open_close_delta_price = (price.close_price - price.open_price).toFixed(2);
-        price.low_high_delta_price = (price.high_price - price.low_price).toFixed(2);
+        price.open_close_delta_price_cents = (price.close_price_cents - price.open_price_cents);
+        price.low_high_delta_price_cents = (price.high_price_cents - price.low_price_cents);
       });
     }
 
