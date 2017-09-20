@@ -1,5 +1,6 @@
 <section>
   <h1>{{vm.stock.ticker}}</h1>
-  Average volume: {{vm.stock.average_volume}}
+  Average volume: {{vm.stock.average_volume}}<br/>
+  Number of losing days: {{vm.stock.losing_days_count}}
   <stock-prices-table data-stock="vm.stock" data-stock-prices="vm.stock.prices"></stock-prices-table>
 </section>

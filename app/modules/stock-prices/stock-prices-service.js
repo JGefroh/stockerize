@@ -32,6 +32,7 @@
     function postProcess(data) {
       angular.forEach(data, function(price) {
         price.open_close_delta_price = (price.close_price - price.open_price).toFixed(2);
+        price.low_high_delta_price = (price.high_price - price.low_price).toFixed(2);
       });
     }
 

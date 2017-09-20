@@ -29,6 +29,11 @@
     }
 
     service.updateStats = function(stock) {
+      calculateAverageVolume(stock);
+      calculateLosingDays(stock);
+    }
+
+    function calculateAverageVolume(stock) {
       stock.average_volume = 0;
       angular.forEach(stock.prices, function(stockPrice) {
         stock.average_volume += stockPrice.volume;
@@ -37,6 +42,15 @@
       if (stock.prices.length) {
         stock.average_volume /= stock.prices.length;
       }
+    }
+
+    function calculateLosingDays(stock) {
+      stock.losing_days_count = 0;
+      angular.forEach(stock.prices, function(stockPrice) {
+        if (stockPrice.close_price < stockPrice.open_price) {
+          stock.losing_days_count++;
+        }
+      });
     }
   }
 })();

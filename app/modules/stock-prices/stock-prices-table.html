@@ -4,9 +4,10 @@
     <th>Date</th>
     <th>Open Price</th>
     <th>Close Price</th>
-    <th>High Price</th>
+    <th>Open / Close Delta</th>
     <th>Low Price</th>
-    <th>Delta</th>
+    <th>High Price</th>
+    <th>Max Profit</th>
     <th>Volume</th>
   </thead>
   <tbody>
@@ -24,13 +25,16 @@
         {{price.close_price | currency:'$':2}}
       </td>
       <td style="text-align: right;">
-        {{price.high_price | currency:'$':2}}
+        {{price.open_close_delta_price | currency:'$':2}}
       </td>
       <td style="text-align: right;">
         {{price.low_price | currency:'$':2}}
       </td>
       <td style="text-align: right;">
-        {{price.open_close_delta_price | currency:'$':2}}
+        {{price.high_price | currency:'$':2}}
+      </td>
+      <td style="text-align: right;">
+        {{price.low_high_delta_price | currency:'$':2}}
       </td>
       <td style="text-align: right;">
         {{price.volume}}
