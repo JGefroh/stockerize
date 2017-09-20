@@ -34,6 +34,7 @@
       </td>
       <td style="text-align: right;">
         {{price.volume}}
+        <span data-ng-show="vm.stock && (price.volume/vm.stock.average_volume > 1.10)">*</span>
       </td>
     </tr>
   </tbody>

@@ -21,6 +21,7 @@
     vm.getStockPrices = function(stock) {
       StockPricesService.getDailyPrices(stock.id).then(function(stockPrices) {
         vm.stock.prices = stockPrices;
+        StocksService.updateStats(vm.stock);
       });
     }
 

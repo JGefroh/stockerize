@@ -5,7 +5,7 @@
     "ticker": "GOOG",
     "open_price": 144.33,
     "close_price": 43.22,
-    "volume": 2214,
+    "volume": 100,
     "date": "2017-01-01",
     "high_price": 144.55,
     "low_price": 43.22
@@ -16,7 +16,7 @@
     "ticker": "GOOG",
     "open_price": 43.22,
     "close_price": 133.22,
-    "volume": 2414,
+    "volume": 200,
     "date": "2017-01-02",
     "high_price": 153.22,
     "low_price": 13.22
@@ -27,7 +27,7 @@
     "ticker": "MSFT",
     "open_price": 1134.33,
     "close_price": 53.22,
-    "volume": 2244,
+    "volume": 300,
     "date": "2017-01-03",
     "high_price": 144.55,
     "low_price": 43.22
@@ -38,7 +38,7 @@
     "ticker": "GOOG",
     "open_price": 224.33,
     "close_price": 41.22,
-    "volume": 2244,
+    "volume": 150,
     "date": "2017-01-04",
     "high_price": 144.55,
     "low_price": 43.22

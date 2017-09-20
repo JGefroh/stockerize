@@ -16,6 +16,7 @@
         controllerAs: 'vm',
         bindToController: true,
         scope: {
+          stock: '=?',
           stockPrices: '='
         }
       };

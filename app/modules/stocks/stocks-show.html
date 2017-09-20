@@ -1,4 +1,5 @@
 <section>
   <h1>{{vm.stock.ticker}}</h1>
-  <stock-prices-table data-stock-prices="vm.stock.prices"></stock-prices-table>
+  Average volume: {{vm.stock.average_volume}}
+  <stock-prices-table data-stock="vm.stock" data-stock-prices="vm.stock.prices"></stock-prices-table>
 </section>
