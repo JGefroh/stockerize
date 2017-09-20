@@ -1,4 +1,3 @@
-# encoding: UTF-8
 # This file is auto-generated from the current state of the database. Instead
 # of editing this file, please use the migrations feature of Active Record to
 # incrementally modify your database, and then regenerate this schema definition.
@@ -11,9 +10,30 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160915073711) do
+ActiveRecord::Schema.define(version: 20170920011641) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "stock_prices", force: :cascade do |t|
+    t.integer  "close_price_cents",    default: 0,     null: false
+    t.string   "close_price_currency", default: "USD", null: false
+    t.integer  "open_price_cents",     default: 0,     null: false
+    t.string   "open_price_currency",  default: "USD", null: false
+    t.integer  "low_price_cents",      default: 0,     null: false
+    t.string   "low_price_currency",   default: "USD", null: false
+    t.integer  "high_price_cents",     default: 0,     null: false
+    t.string   "high_price_currency",  default: "USD", null: false
+    t.integer  "volume",               default: 0
+    t.date     "date"
+    t.datetime "created_at",                           null: false
+    t.datetime "updated_at",                           null: false
+  end
+
+  create_table "stocks", force: :cascade do |t|
+    t.string   "ticker"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
 
 end

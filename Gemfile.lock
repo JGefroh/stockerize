@@ -55,6 +55,15 @@ GEM
     mime-types-data (3.2016.0521)
     mini_portile2 (2.3.0)
     minitest (5.10.3)
+    monetize (1.7.0)
+      money (~> 6.9)
+    money (6.9.0)
+      i18n (>= 0.6.4, < 0.9)
+    money-rails (1.9.0)
+      activesupport (>= 3.0)
+      monetize (~> 1.7.0)
+      money (~> 6.9.0)
+      railties (>= 3.0)
     nio4r (2.1.0)
     nokogiri (1.8.1)
       mini_portile2 (~> 2.3.0)
@@ -106,6 +115,7 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
+  money-rails (= 1.9.0)
   pg
   rack-cors (= 0.4.0)
   rails (~> 5.0.0, >= 5.0.0.1)
