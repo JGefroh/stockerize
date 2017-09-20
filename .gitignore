@@ -4,3 +4,4 @@ app.min.js
 bower_components
 public
 .DS_Store
+log

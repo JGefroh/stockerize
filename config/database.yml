@@ -1,0 +1,16 @@
+default: &default
+  adapter: postgresql
+  encoding: unicode
+  pool: 5
+
+development:
+  <<: *default
+  database: stockerize_development
+
+test:
+  <<: *default
+  database: _test
+
+production:
+  database: deploy
+  <<: *default
