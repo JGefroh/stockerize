@@ -1,12 +1,12 @@
 (function() {
   angular
-    .module('stockerize.stocks')
+    .module('stockerize.stock-prices')
     .service('StockPricesService', ['$http', Service]);
 
   function Service($http) {
     var service = this;
     var URL ='https://www.quandl.com/api/v3/datatables/WIKI/PRICES.json'
-    URL = './data/test_data.json'
+    URL = './data/stock-prices.json'
 
     service.get = function(id) {
       return $http.get(URL).then(function(response) {
@@ -15,10 +15,10 @@
       })
     }
 
-    service.getDailyPrices = function(ticker) {
-      return $http.get(URL, getParams(ticker)).then(function(response) {
+    service.getDailyPrices = function(stock_id) {
+      return $http.get(URL).then(function(response) {
         postProcess(response.data);
-        return response.data;
+        return withStockId(response.data, stock_id);
       })
     }
 
@@ -28,10 +28,14 @@
       });
     }
 
-    function getParams(ticker) {
-      return {
-        ticker: ticker
-      }
+    function withStockId(stockPrices, stock_id) {
+      var matches = [];
+      angular.forEach(stockPrices, function(stockPrice) {
+        if (stockPrice.stock_id == stock_id) {
+          matches.push(stockPrice);
+        }
+      });
+      return matches;
     }
   }
 })();

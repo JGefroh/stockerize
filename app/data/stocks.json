@@ -1,0 +1,14 @@
+[
+  {
+    "id": 100,
+    "ticker": "GOOG"
+  },
+  {
+    "id": 200,
+    "ticker": "COF"
+  },
+  {
+    "id": 300,
+    "ticker": "MSFT"
+  }
+]

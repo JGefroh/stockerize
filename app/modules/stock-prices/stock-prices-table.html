@@ -10,7 +10,7 @@
     <th>Volume</th>
   </thead>
   <tbody>
-    <tr data-ng-repeat="price in vm.stockPrices" data-ui-sref="stockerize.stocks({id: price.ticker})">
+    <tr data-ng-repeat="price in vm.stockPrices" data-ui-sref="stockerize.stocks({id: price.stock_id})">
       <td>
         {{price.ticker}}
       </td>

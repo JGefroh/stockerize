@@ -1,6 +1,6 @@
 (function() {
   angular
-    .module('stockerize.stocks-prices', [])
+    .module('stockerize.stock-prices', [])
     .config(['$stateProvider', Routes]);
 
   function Routes($stateProvider) {

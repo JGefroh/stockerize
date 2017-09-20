@@ -9,7 +9,7 @@
             'ui.router',
             'stockerize.home',
             'stockerize.stocks',
-            'stockerize.stocks-prices'
+            'stockerize.stock-prices'
           ]
     )
     .config(['$stateProvider', '$urlRouterProvider', '$locationProvider', function($stateProvider, $urlRouterProvider, $locationProvider) {

@@ -13,14 +13,13 @@
 
     vm.getStock = function(id) {
       StocksService.get(id).then(function(stock) {
-        console.info(stock);
         vm.stock = stock;
         vm.getStockPrices(stock);
       });
     }
 
     vm.getStockPrices = function(stock) {
-      StockPricesService.getDailyPrices().then(function(stockPrices) {
+      StockPricesService.getDailyPrices(stock.id).then(function(stockPrices) {
         vm.stock.prices = stockPrices;
       });
     }

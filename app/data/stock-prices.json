@@ -1,5 +1,7 @@
 [
   {
+    "id": 4000,
+    "stock_id": 100,
     "ticker": "GOOG",
     "open_price": 144.33,
     "close_price": 43.22,
@@ -9,6 +11,8 @@
     "low_price": 43.22
   },
   {
+    "id": 3000,
+    "stock_id": 100,
     "ticker": "GOOG",
     "open_price": 43.22,
     "close_price": 133.22,
@@ -18,7 +22,9 @@
     "low_price": 13.22
   },
   {
-    "ticker": "GOOG",
+    "id": 2000,
+    "stock_id": 300,
+    "ticker": "MSFT",
     "open_price": 1134.33,
     "close_price": 53.22,
     "volume": 2244,
@@ -27,6 +33,8 @@
     "low_price": 43.22
   },
   {
+    "id": 1000,
+    "stock_id": 100,
     "ticker": "GOOG",
     "open_price": 224.33,
     "close_price": 41.22,
