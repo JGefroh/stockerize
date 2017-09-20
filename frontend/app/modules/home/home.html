@@ -1,4 +1,6 @@
 <div>
+  <input data-ng-model="vm.criteria.ticker"></input>
+  <button data-ng-click="vm.search(vm.criteria)">Search</button>
   <h1>Greatest open / close delta:</h1>
   <stock-prices-table data-stock-prices="vm.stockPrices"></stock-prices-table>
 </div>

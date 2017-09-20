@@ -6,8 +6,15 @@
 
   function Controller($scope, StockPricesService) {
     var vm = this;
+
+    function initialize() {
+      vm.criteria = {
+        ticker: null
+      };
+      vm.search({});
+    }
     vm.search = function(criteria) {
-      StockPricesService.query(null, criteria.ticker).then(function(prices) {
+      StockPricesService.query(criteria).then(function(prices) {
         vm.stockPrices = prices;
       })
     }
@@ -18,7 +25,6 @@
     vm.sell = function(stock) {
     }
 
-    vm.search({});
-
+    initialize();
   }
 })();
