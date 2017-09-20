@@ -1,0 +1,40 @@
+<table>
+  <thead>
+    <th>Ticker</th>
+    <th>Date</th>
+    <th>Open Price</th>
+    <th>Close Price</th>
+    <th>High Price</th>
+    <th>Low Price</th>
+    <th>Delta</th>
+    <th>Volume</th>
+  </thead>
+  <tbody>
+    <tr data-ng-repeat="price in vm.stockPrices" data-ui-sref="stockerize.stocks({id: price.ticker})">
+      <td>
+        {{price.ticker}}
+      </td>
+      <td>
+        {{price.date}}
+      </td>
+      <td style="text-align: right;">
+        {{price.open_price | currency:'$':2}}
+      </td>
+      <td style="text-align: right;">
+        {{price.close_price | currency:'$':2}}
+      </td>
+      <td style="text-align: right;">
+        {{price.high_price | currency:'$':2}}
+      </td>
+      <td style="text-align: right;">
+        {{price.low_price | currency:'$':2}}
+      </td>
+      <td style="text-align: right;">
+        {{price.open_close_delta_price | currency:'$':2}}
+      </td>
+      <td style="text-align: right;">
+        {{price.volume}}
+      </td>
+    </tr>
+  </tbody>
+</table>

@@ -1,40 +1,5 @@
 <div>
   <input data-ng-model="vm.criteria" placeholder="tickers"/>
   <button data-ng-click="vm.search(vm.criteria)">Search</button>
-  <table>
-    <thead>
-      <th>Ticker</th>
-      <th>Date</th>
-      <th>Open Price</th>
-      <th>Close Price</th>
-      <th>High Price</th>
-      <th>Low Price</th>
-      <th>Delta</th>
-    </thead>
-    <tbody>
-      <tr data-ng-repeat="price in vm.prices">
-        <td>
-          {{price.ticker}}
-        </td>
-        <td>
-          {{price.date}}
-        </td>
-        <td style="text-align: right;">
-          {{price.open_price | currency:'$':2}}
-        </td>
-        <td style="text-align: right;">
-          {{price.close_price | currency:'$':2}}
-        </td>
-        <td style="text-align: right;">
-          {{price.high_price | currency:'$':2}}
-        </td>
-        <td style="text-align: right;">
-          {{price.low_price | currency:'$':2}}
-        </td>
-        <td style="text-align: right;">
-          {{price.open_close_delta_price | currency:'$':2}}
-        </td>
-      </tr>
-    </tbody>
-  </table>
+  <stock-prices-table data-stock-prices="vm.stockPrices"></stock-prices-table>
 </div>

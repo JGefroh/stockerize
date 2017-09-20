@@ -7,7 +7,9 @@
     .module('stockerize', [
             'ngSanitize',
             'ui.router',
-            'stockerize.home'
+            'stockerize.home',
+            'stockerize.stocks',
+            'stockerize.stocks-prices'
           ]
     )
     .config(['$stateProvider', '$urlRouterProvider', '$locationProvider', function($stateProvider, $urlRouterProvider, $locationProvider) {
