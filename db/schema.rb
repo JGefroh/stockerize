@@ -25,6 +25,8 @@ ActiveRecord::Schema.define(version: 20170920011641) do
     t.integer  "high_price_cents",     default: 0,     null: false
     t.string   "high_price_currency",  default: "USD", null: false
     t.integer  "volume",               default: 0
+    t.string   "ticker"
+    t.integer  "stock_id",                             null: false
     t.date     "date"
     t.datetime "created_at",                           null: false
     t.datetime "updated_at",                           null: false
