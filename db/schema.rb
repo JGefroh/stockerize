@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170920186000) do
+ActiveRecord::Schema.define(version: 20170920232649) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -34,6 +34,8 @@ ActiveRecord::Schema.define(version: 20170920186000) do
     t.string   "open_close_price_delta_currency", default: "USD", null: false
     t.bigint   "low_high_price_delta_cents",      default: 0,     null: false
     t.string   "low_high_price_delta_currency",   default: "USD", null: false
+    t.index ["date", "low_high_price_delta_cents"], name: "index_stock_prices_on_date_and_low_high_price_delta_cents", using: :btree
+    t.index ["date", "open_close_price_delta_cents"], name: "index_stock_prices_on_date_and_open_close_price_delta_cents", using: :btree
     t.index ["date"], name: "index_stock_prices_on_date", using: :btree
     t.index ["low_high_price_delta_cents"], name: "index_stock_prices_on_low_high_price_delta_cents", using: :btree
     t.index ["open_close_price_delta_cents"], name: "index_stock_prices_on_open_close_price_delta_cents", using: :btree
