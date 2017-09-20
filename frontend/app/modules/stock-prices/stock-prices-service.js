@@ -6,7 +6,6 @@
   function Service($http, config) {
     var service = this;
     var URL = config.webServiceBase;
-    console.info(URL);
 
     service.get = function(id) {
       return $http.get(URL + '/stock_prices/').then(function(response) {
@@ -23,9 +22,9 @@
     }
 
     service.getDailyPrices = function(stock_id) {
-      return $http.get(URL + '/stock_prices/').then(function(response) {
+      return $http.get(URL + '/stock_prices', {params: {stock_id: stock_id}}).then(function(response) {
         postProcess(response.data);
-        return withStockId(response.data, stock_id);
+        return response.data;
       })
     }
 

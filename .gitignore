@@ -5,3 +5,4 @@ bower_components
 public
 .DS_Store
 log
+tmp

@@ -1,11 +1,11 @@
 (function() {
   angular
     .module('stockerize.stocks')
-    .service('StocksService', ['$http', Service]);
+    .service('StocksService', ['$http','config', Service]);
 
-  function Service($http) {
+  function Service($http, config) {
     var service = this;
-    URL = './data/stocks.json'
+    var URL = config.webServiceBase;
 
     service.query = function() {
       return $http.get(URL).then(function(response) {
@@ -13,8 +13,8 @@
       })
     }
     service.get = function(id) {
-      return $http.get(URL).then(function(response) {
-        return stockWithId(response.data, id);
+      return $http.get(URL + '/stocks/' + id).then(function(response) {
+        return response.data;
       })
     };
 
