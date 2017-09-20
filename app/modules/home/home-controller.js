@@ -7,7 +7,7 @@
   function Controller($scope, StockPricesService) {
     var vm = this;
     vm.search = function(criteria) {
-      StockPricesService.getDailyPrices("GOOG").then(function(prices) {
+      StockPricesService.getDailyPrices().then(function(prices) {
         vm.stockPrices = prices;
       })
     }

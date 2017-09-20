@@ -15,6 +15,13 @@
       })
     }
 
+    service.query = function(params) {
+      return $http.get(URL, params).then(function(response) {
+        postProcess(response.data);
+        return withStockId(response.data, params.stock_id);
+      })
+    }
+
     service.getDailyPrices = function(stock_id) {
       return $http.get(URL).then(function(response) {
         postProcess(response.data);
@@ -29,6 +36,10 @@
     }
 
     function withStockId(stockPrices, stock_id) {
+      if (!stock_id) {
+        return stockPrices;
+      }
+
       var matches = [];
       angular.forEach(stockPrices, function(stockPrice) {
         if (stockPrice.stock_id == stock_id) {
