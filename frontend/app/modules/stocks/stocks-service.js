@@ -37,7 +37,7 @@
     function calculateLosingDays(stock) {
       stock.losing_days_count = 0;
       angular.forEach(stock.prices, function(stockPrice) {
-        if (stockPrice.close_price < stockPrice.open_price) {
+        if (stockPrice.close_price_cents < stockPrice.open_price_cents) {
           stock.losing_days_count++;
         }
       });

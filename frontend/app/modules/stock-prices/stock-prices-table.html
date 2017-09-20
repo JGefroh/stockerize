@@ -25,7 +25,7 @@
         {{price.close_price_cents / 100 | currency:'$':2}}
       </td>
       <td style="text-align: right;">
-        {{price.open_close_delta_price_cents / 100 | currency:'$':2}}
+        {{price.open_close_price_delta_cents / 100 | currency:'$':2}}
       </td>
       <td style="text-align: right;">
         {{price.low_price_cents / 100 | currency:'$':2}}
@@ -34,11 +34,11 @@
         {{price.high_price_cents / 100 | currency:'$':2}}
       </td>
       <td style="text-align: right;">
-        {{price.low_high_delta_price_cents / 100 | currency:'$':2}}
+        {{price.low_high_price_delta_cents / 100 | currency:'$':2}}
       </td>
       <td style="text-align: right;">
-        {{price.volume}}
         <span data-ng-show="vm.stock && (price.volume/vm.stock.average_volume > 1.10)">*</span>
+        {{price.volume}}
       </td>
     </tr>
   </tbody>
