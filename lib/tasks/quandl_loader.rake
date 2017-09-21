@@ -37,7 +37,7 @@ namespace :quandl_loader do
             close_price: row[5],
             volume: row[6]
       )
-      stock_prices << [sp.stock_id, sp.ticker, sp.date, sp.open_price_cents, sp.high_price_cents, sp.low_price_cents, sp.close_price_cents, sp.volume, sp.high_price_cents - sp.low_price_cents, sp.close_price_cents - sp.open_price_cents]
+      stock_prices << [sp.stock_id, sp.ticker, sp.date, sp.open_price_cents, sp.high_price_cents, sp.low_price_cents, sp.close_price_cents, sp.volume, sp.close_price_cents - sp.open_price_cents, sp.high_price_cents - sp.low_price_cents]
     end
   end
 end

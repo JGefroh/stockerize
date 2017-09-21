@@ -1,0 +1,27 @@
+.stock-prices-table {
+  width: 100%;
+  th {
+    text-align: right;
+    &.money {
+      text-align: right;
+    }
+  }
+  td {
+    &.money {
+      text-align: right;
+      .negative {
+        color: red;
+      }
+    }
+  }
+  .symbol {
+    float: right;
+    width: 1rem;
+  }
+  .down {
+    color: red;
+  }
+  .up {
+    color: green;
+  }
+}

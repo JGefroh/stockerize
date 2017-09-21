@@ -6,3 +6,11 @@
 @import 'base/variables';
 @import 'base/grid';
 @import 'base/layouts';
+
+@import 'components/navigation';
+@import 'components/stock-prices/stock-prices-table';
+
+html, body {
+  margin: 0;
+  font-family:  -apple-system,BlinkMacSystemFont,"Segoe UI",Oxygen-Sans,Ubuntu,Cantarell,"Helvetica Neue",sans-serif;
+}

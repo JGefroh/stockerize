@@ -1,4 +1,4 @@
-<table>
+<table class="stock-prices-table">
   <thead>
     <th>Ticker</th>
     <th>Date</th>
@@ -18,22 +18,31 @@
       <td>
         {{price.date}}
       </td>
-      <td style="text-align: right;">
+      <td class="money">
         {{price.open_price_cents / 100 | currency:'$':2}}
       </td>
-      <td style="text-align: right;">
+      <td class="money">
         {{price.close_price_cents / 100 | currency:'$':2}}
       </td>
-      <td style="text-align: right;">
-        {{price.open_close_price_delta_cents / 100 | currency:'$':2}}
+      <td class="money">
+        <span data-ng-if="price.close_price_cents < price.open_price_cents" class="down symbol">
+          &#9660;
+        </span>
+        <span data-ng-if="price.close_price_cents > price.open_price_cents" class="up symbol">
+          &#9650;
+        </span>
+        <span data-ng-if="price.close_price_cents === price.open_price_cents" class="symbol">
+          &nbsp;
+        </span>
+        <span data-ng-class="{negative: price.close_price_cents < price.open_price_cents}">{{price.open_close_price_delta_cents / 100 | currency:'$':2}}</span>
       </td>
-      <td style="text-align: right;">
+      <td class="money">
         {{price.low_price_cents / 100 | currency:'$':2}}
       </td>
-      <td style="text-align: right;">
+      <td class="money">
         {{price.high_price_cents / 100 | currency:'$':2}}
       </td>
-      <td style="text-align: right;">
+      <td class="money">
         {{price.low_high_price_delta_cents / 100 | currency:'$':2}}
       </td>
       <td style="text-align: right;">
