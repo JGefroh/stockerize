@@ -5,7 +5,7 @@
 
   function Routes($stateProvider) {
     $stateProvider.state('stockerize.home', {
-        url: '/',
+        url: '/?tickers',
         templateUrl: 'home.html',
         controller: 'HomeController',
         controllerAs: 'vm',

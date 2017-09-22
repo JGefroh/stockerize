@@ -1,6 +1,16 @@
-<div>
-  <input data-ng-model="vm.criteria.ticker"></input>
-  <button data-ng-click="vm.search(vm.criteria)">Search</button>
+<section class="home">
+  <input data-ng-model="vm.tickersToAdd"
+         placeholder="Search by ticker (eg. AMD,INTC)"
+         class="search-input"></input>
+   <button data-ng-click="vm.add(vm.tickersToAdd)">Add</button>
+  <div data-ng-if="vm.tickers.length">
+    <label>Showing history for:</label>
+    <span data-ng-repeat="ticker in vm.tickers | orderBy:'toString()'"
+          data-ng-click="vm.remove(ticker)"
+          class="badge remove-on-hover">
+          {{ticker}}
+    </span>
+  </div>
   <h1>Greatest open / close delta:</h1>
   <stock-prices-table data-stock-prices="vm.stockPrices"></stock-prices-table>
-</div>
+</section>

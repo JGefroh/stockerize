@@ -7,8 +7,12 @@
 @import 'base/grid';
 @import 'base/layouts';
 
+@import 'components/badge';
+@import 'components/form';
 @import 'components/navigation';
 @import 'components/stock-prices/stock-prices-table';
+
+@import 'pages/home';
 
 html, body {
   margin: 0;
