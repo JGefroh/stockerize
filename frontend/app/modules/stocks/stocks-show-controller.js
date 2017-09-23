@@ -28,6 +28,7 @@
       vm.stockLabels = [];
       vm.stockData = [[], []];
       vm.chartColors = ['#803690', '#46BFBD'];
+      stockPrices = $filter('orderBy')(stockPrices, 'date')
       angular.forEach(stockPrices, function(stockPrice) {
         vm.stockLabels.push($filter('date')(stockPrice.date, 'MM-dd-yyyy'));
         vm.stockData[0].push(stockPrice.close_price_cents / 100);
