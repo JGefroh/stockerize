@@ -82,7 +82,7 @@ RUN apk add --update \
     libxslt-dev \
     qt-dev
 
-RUN gem install bundler tzinfo-data
+RUN gem install bundler tzinfo-data foreman
 
 COPY Gemfile /app/
 COPY Gemfile.lock /app/
@@ -92,4 +92,4 @@ WORKDIR /app
 RUN bundle install --path vendor/bundle
 COPY . /app
 COPY --from=builder /stockerize/frontend/public /app/public
-CMD bundle exec foreman start
+CMD foreman start
