@@ -7,6 +7,7 @@
   function Controller($state, $scope, StockPricesService) {
     var vm = this;
     function initialize() {
+      vm.stocksByTicker = {};
       vm.tickers = $state.params.tickers ? $state.params.tickers.split(',') : [];
       vm.criteria = {
         ticker: vm.tickers.join(',')
@@ -20,7 +21,10 @@
       }
       StockPricesService.query(criteria).then(function(prices) {
         vm.stockPrices = prices;
-        updateChart(vm.stockPrices)
+        angular.forEach(vm.stockPrices, function(stockPrice) {
+          vm.stocksByTicker[stockPrice.ticker] = vm.stocksByTicker[stockPrice.ticker] || [];
+          vm.stocksByTicker[stockPrice.ticker].push(stockPrice);
+        });
       })
     }
 
@@ -35,6 +39,9 @@
       vm.tickers = vm.tickers.join(',')
       $state.params.tickers = vm.tickers;
       $state.go($state.current, angular.copy($state.params), {reload: true})
+    }
+
+    vm.getStockPrices = function(ticker) {
     }
 
     initialize();
