@@ -20,6 +20,7 @@
       }
       StockPricesService.query(criteria).then(function(prices) {
         vm.stockPrices = prices;
+        updateChart(vm.stockPrices)
       })
     }
 

@@ -2,12 +2,13 @@
   'use strict';
   var webServiceBase = '{!api_host!}';
   var analyticsEnabled = '{!analytics_enabled!}';
-  var googleMapsAPIKey = 'AIzaSyCgNsKGtrqTlN4uRXj6HbzR-drBWKqqHxA'; //Also in index.html
   angular
     .module('stockerize', [
+            'chart.js',
             'ngSanitize',
             'ui.router',
             'stockerize.home',
+            'stockerize.components',
             'stockerize.stocks',
             'stockerize.stock-prices'
           ]

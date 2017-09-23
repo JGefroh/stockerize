@@ -1,0 +1,9 @@
+.line-chart {
+  @include span-columns(12);
+  canvas {
+  }
+
+  .chart.chart-line {
+    height: 200px;
+  }
+}

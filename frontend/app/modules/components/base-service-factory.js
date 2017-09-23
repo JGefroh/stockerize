@@ -1,6 +1,6 @@
 (function() {
   angular
-    .module('jgefroh.components')
+    .module('stockerize.components')
     .factory('BaseServiceFactory', ['$http', 'config', Factory]);
 
   function Factory($http, config) {
