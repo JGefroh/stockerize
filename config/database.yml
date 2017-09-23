@@ -12,5 +12,5 @@ test:
   database: _test
 
 production:
-  database: deploy
+  database: stockerize_prod
   <<: *default
