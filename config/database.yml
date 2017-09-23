@@ -12,5 +12,5 @@ test:
   database: _test
 
 production:
-  database: stockerize_prod
+  url: <%= ENV['DATABASE_URL'] %>
   <<: *default
