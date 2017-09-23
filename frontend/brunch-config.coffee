@@ -1,8 +1,8 @@
 isDevelopment = true
-host = 'http://127.0.0.1:3000'
+host = 'http://127.0.0.1:3000/api'
 if process.env.NODE_ENV is 'production'
   isDevelopment = false
-  host = 'http://stockerize.jgefroh.com';
+  host = 'http://stockerize.jgefroh.com/api';
 
 exports.config =
   modules:
