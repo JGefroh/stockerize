@@ -24,7 +24,7 @@ RUN bower install --allow-root
 COPY ./frontend /stockerize/frontend
 
 WORKDIR /stockerize/frontend/
-RUN brunch build --production
+RUN NODE_ENV=production brunch build --production
 
 FROM alpine:3.4 AS release
 
