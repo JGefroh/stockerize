@@ -5,4 +5,5 @@ Rails.application.routes.draw do
     resources :stock_prices, only: [:index]
     resources :stocks, only: [:show]
   end
+  get '/*path', to: redirect('/index.html')
 end
