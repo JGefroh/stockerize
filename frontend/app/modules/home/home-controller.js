@@ -9,10 +9,17 @@
     function initialize() {
       vm.stocksByTicker = {};
       vm.tickers = $state.params.tickers ? $state.params.tickers.split(',') : [];
+      vm.resolution = $state.params.tickers ? $state.params.resolution || 'daily' : null;
       vm.criteria = {
-        ticker: vm.tickers.join(',')
+        ticker: vm.tickers.join(','),
+        resolution: vm.resolution
       };
       vm.search(vm.criteria);
+    }
+
+    vm.selectResolution = function(resolution) {
+      $state.params.resolution = resolution;
+      $state.go($state.current, angular.copy($state.params), {reload: true})
     }
 
     vm.search = function(criteria) {

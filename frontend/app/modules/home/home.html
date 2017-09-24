@@ -4,19 +4,21 @@
          class="search-input"></input>
    <button data-ng-click="vm.add(vm.tickersToAdd)">Add</button>
   <div data-ng-if="vm.tickers.length">
-    <label>Showing history for:</label>
+    <label>Showing history for:</label><br/>
     <span data-ng-repeat="ticker in vm.tickers | orderBy:'toString()'"
           data-ng-click="vm.remove(ticker)"
           class="badge remove-on-hover">
           {{ticker}}
     </span>
   </div>
+
+
+  <resolution-select data-ng-if="vm.tickers.length" data-on-select="vm.selectResolution(resolution)"></resolution-select>
   <section data-ng-repeat="ticker in vm.tickers">
     <h3>{{ticker}}</h3>
     <stock-chart data-ng-if="vm.stocksByTicker[ticker]"
                  data-stock-prices="vm.stocksByTicker[ticker]"></stock-chart>
   </section>
 
-  <h1>Greatest open / close delta:</h1>
   <stock-prices-table data-stock-prices="vm.stockPrices"></stock-prices-table>
 </section>

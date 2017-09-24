@@ -9,6 +9,7 @@
 
     function initialize() {
       vm.getStock($state.params.id);
+      vm.resolution = $state.params.resolution || 'daily'
     }
     vm.getStock = function(id) {
       StocksService.get(id).then(function(stock) {
@@ -17,9 +18,16 @@
       });
     }
 
+    vm.selectResolution = function(resolution) {
+      $state.params.resolution = resolution;
+      $state.go($state.current, angular.copy($state.params), {reload: true})
+    }
+
     vm.getStockPrices = function(stock) {
-      StockPricesService.query({stock_id: stock.id}).then(function(stockPrices) {
-        vm.stock.prices = stockPrices;
+      StockPricesService.query({ticker: stock.ticker, resolution: vm.resolution}).then(function(stockPrices) {
+        vm.stock.prices = stockPrices.filter(function(item) {
+          return item.ticker;
+        });
         StocksService.updateStats(vm.stock);
       });
     }

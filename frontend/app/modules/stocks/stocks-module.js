@@ -5,7 +5,7 @@
 
   function Routes($stateProvider) {
     $stateProvider.state('stockerize.stocks', {
-        url: '/stocks/:id',
+        url: '/stocks/:id?resolution',
         templateUrl: 'stocks-show.html',
         controller: 'StocksShowController',
         controllerAs: 'vm',
