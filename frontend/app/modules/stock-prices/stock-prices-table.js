@@ -17,7 +17,8 @@
         bindToController: true,
         scope: {
           stock: '=?',
-          stockPrices: '='
+          stockPrices: '=',
+          truncate: '='
         }
       };
     }

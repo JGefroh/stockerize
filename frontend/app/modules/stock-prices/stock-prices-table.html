@@ -1,19 +1,19 @@
 <table class="stock-prices-table">
   <thead>
-    <th>Ticker</th>
-    <th>Date</th>
+    <th data-ng-if="!vm.truncate" style="text-align: left;">Ticker</th>
+    <th style="text-align: left;">Date</th>
     <th>Open Price</th>
     <th>Close Price</th>
     <th>Open / Close Delta</th>
-    <th>Low Price</th>
-    <th>High Price</th>
-    <th>Max Profit</th>
+    <th data-ng-if="!vm.truncate">Low Price</th>
+    <th data-ng-if="!vm.truncate">High Price</th>
+    <th data-ng-if="!vm.truncate">Max Profit</th>
     <th>Volume</th>
   </thead>
   <tbody>
-    <tr data-ng-if="price.ticker" data-ng-repeat="price in vm.stockPrices" data-ui-sref="stockerize.stocks({id: price.stock_id})">
-      <td>
-        {{price.ticker}}
+    <tr data-ng-if="price.ticker" data-ng-repeat="price in vm.stockPrices">
+      <td data-ng-if="!vm.truncate">
+        <a data-ui-sref="stockerize.stocks({id: price.stock_id})">{{price.ticker}}</a>
       </td>
       <td>
         {{price.date}}
@@ -36,13 +36,13 @@
         </span>
         <span data-ng-class="{negative: price.close_price_cents < price.open_price_cents}">{{price.open_close_price_delta_cents / 100 | currency:'$':2}}</span>
       </td>
-      <td class="money">
+      <td data-ng-if="!vm.truncate" class="money">
         {{price.low_price_cents / 100 | currency:'$':2}}
       </td>
-      <td class="money">
+      <td data-ng-if="!vm.truncate" class="money">
         {{price.high_price_cents / 100 | currency:'$':2}}
       </td>
-      <td class="money">
+      <td data-ng-if="!vm.truncate" class="money">
         {{price.low_high_price_delta_cents / 100 | currency:'$':2}}
       </td>
       <td style="text-align: right;">
