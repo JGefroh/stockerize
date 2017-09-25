@@ -2,11 +2,11 @@
   <thead>
     <th data-ng-if="!vm.truncate" style="text-align: left;">Ticker</th>
     <th style="text-align: left;">Date</th>
-    <th>Open Price</th>
-    <th>Close Price</th>
+    <th>{{vm.average ? 'Average' : ''}} Open Price</th>
+    <th>{{vm.average ? 'Average' : ''}} Close Price</th>
     <th>Open / Close Delta</th>
-    <th data-ng-if="!vm.truncate">Low Price</th>
-    <th data-ng-if="!vm.truncate">High Price</th>
+    <th data-ng-if="!vm.truncate">{{vm.average ? 'Average' : ''}} Low Price</th>
+    <th data-ng-if="!vm.truncate">{{vm.average ? 'Average' : ''}} High Price</th>
     <th data-ng-if="!vm.truncate">Max Profit</th>
     <th>Volume</th>
   </thead>

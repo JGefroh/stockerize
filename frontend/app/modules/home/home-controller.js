@@ -9,7 +9,7 @@
     function initialize() {
       vm.stocksByTicker = {};
       vm.tickers = $state.params.tickers ? $state.params.tickers.split(',') : [];
-      vm.resolution = $state.params.tickers ? $state.params.resolution || 'daily' : null;
+      vm.resolution = $state.params.tickers ? $state.params.resolution || 'monthly' : null;
       vm.criteria = {
         ticker: vm.tickers.join(','),
         resolution: vm.resolution

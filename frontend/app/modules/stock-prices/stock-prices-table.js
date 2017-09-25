@@ -18,7 +18,8 @@
         scope: {
           stock: '=?',
           stockPrices: '=',
-          truncate: '='
+          truncate: '=',
+          average: '=?'
         }
       };
     }

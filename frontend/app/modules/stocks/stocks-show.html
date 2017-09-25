@@ -11,6 +11,6 @@
   <section style="min-height: 300px; margin-bottom: 1rem;">
     <stock-chart data-ng-if="vm.stock.prices" data-stock-prices="vm.stock.prices"></stock-chart>
   </section>
-  <stock-prices-table data-stock="vm.stock" data-stock-prices="vm.stock.prices" data-truncate="true"></stock-prices-table>
+  <stock-prices-table data-stock="vm.stock" data-stock-prices="vm.stock.prices" data-truncate="true" data-average="vm.resolution !== 'daily'"></stock-prices-table>
   </section>
 </section>
