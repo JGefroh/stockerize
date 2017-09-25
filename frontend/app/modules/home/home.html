@@ -13,7 +13,7 @@
   </div>
 
 
-  <resolution-select data-ng-if="vm.tickers.length" data-on-select="vm.selectResolution(resolution)"></resolution-select>
+  <resolution-select data-ng-if="vm.tickers.length" data-on-select="vm.selectResolution(resolution)" data-ng-model="vm.resolution"></resolution-select>
   <section data-ng-repeat="ticker in vm.tickers">
     <h3>{{ticker}}</h3>
     <stock-chart data-ng-if="vm.stocksByTicker[ticker]"

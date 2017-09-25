@@ -7,23 +7,23 @@
       var vm = this;
       vm.resolutions = [
         {
-          label: '1-day',
+          label: 'Day',
           value: 'daily'
         },
         {
-          label: '7-day',
+          label: 'Week',
           value: 'weekly'
         },
         {
-          label: '1-month',
+          label: 'Month',
           value: 'monthly'
         },
         {
-          label: '3-month',
+          label: 'Quarter',
           value: 'quarterly'
         },
         {
-          label: '1-year',
+          label: 'Year',
           value: 'yearly'
         }
       ]

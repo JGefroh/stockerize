@@ -4,4 +4,11 @@
   background-color: $color-ticker-background;
   color: $color-ticker-text;
   margin: 0.25rem;
+  &.selected {
+    background-color: $color-selected-background;
+    color: $color-selected-text;
+  }
+  &.clickable {
+    cursor: pointer;
+  }
 }

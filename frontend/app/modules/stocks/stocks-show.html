@@ -7,7 +7,7 @@
     <a data-ui-sref="stockerize.home">Back to list</a>
   </section>
   <section class="stock-data">
-  <resolution-select  data-on-select="vm.selectResolution(resolution)"></resolution-select>
+  <resolution-select data-ng-model="vm.resolution" data-on-select="vm.selectResolution(resolution)"></resolution-select>
   <section style="min-height: 300px; margin-bottom: 1rem;">
     <stock-chart data-ng-if="vm.stock.prices" data-stock-prices="vm.stock.prices"></stock-chart>
   </section>

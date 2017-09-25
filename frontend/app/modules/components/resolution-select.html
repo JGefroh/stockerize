@@ -1,7 +1,8 @@
 <section style="margin-bottom: 1rem;">
   <div data-ng-repeat="resolution in vm.resolutions"
        data-ng-click="vm.onSelect({resolution: resolution.value})"
-       class="badge">
+       data-ng-class="{'selected': vm.ngModel === resolution.value}"
+       class="badge clickable">
     {{resolution.label}}
   </div>
 </section>
