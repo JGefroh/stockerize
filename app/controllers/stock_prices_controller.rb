@@ -2,9 +2,9 @@ class StockPricesController < ApplicationController
   def index
     @stock_prices = StockPrice.all
     if params.to_h.count == 2
-      @stock_prices = @stock_prices.order(date: :desc, open_close_price_delta_cents: :desc)
+      @stock_prices = @stock_prices.order(date: :desc, open_close_price_delta_cents: :desc).limit(20)
     end
-    @stock_prices = @stock_prices.where(stock_id: params[:stock_id]).order(date: :desc) if params[:stock_id]
+    @stock_prices = @stock_prices.where(stock_id: params[:stock_id]).order(date: :desc).limit(100) if params[:stock_id]
     if params[:resolution]
       params[:ticker] = @stock_prices.limit(10).pluck(:ticker).join(',') unless params[:ticker]
       result_set = execute_time_series(params)
@@ -26,7 +26,6 @@ class StockPricesController < ApplicationController
       }
       render json: results, root: false and return
     end
-    @stock_prices = @stock_prices.limit(100)
     render json: @stock_prices, root: false
   end
 
