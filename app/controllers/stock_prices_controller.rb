@@ -69,7 +69,6 @@ class StockPricesController < ApplicationController
        LEFT JOIN stock_prices
        ON DATE(DATE_TRUNC(#{safe_interval}, stock_prices.date)) = periods and ticker IN (#{safe_tickers})
        GROUP BY periods, ticker, stock_id
-       ORDER BY periods DESC
-       LIMIT 100")
+       ORDER BY periods DESC")
   end
 end

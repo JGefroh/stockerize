@@ -9,7 +9,7 @@
 
     function initialize() {
       vm.getStock($state.params.id);
-      vm.resolution = $state.params.resolution || 'daily'
+      vm.resolution = $state.params.resolution || 'monthly'
     }
     vm.getStock = function(id) {
       StocksService.get(id).then(function(stock) {

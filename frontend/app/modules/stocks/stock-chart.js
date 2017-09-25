@@ -11,14 +11,13 @@
 
       vm.chartOptions = {
         maintainAspectRatio: false,
-        options: {
-          scales: {
-            yAxes: [{
-              ticks: {
-                beginAtZero:true
-              }
-            }]
-          }
+        animation: false,
+        scales: {
+          yAxes: [{
+            ticks: {
+              beginAtZero: vm.beginAtZero
+            }
+          }]
         }
       };
 
@@ -43,7 +42,8 @@
       controllerAs: 'vm',
       bindToController: true,
       scope: {
-        stockPrices: '='
+        stockPrices: '=',
+        beginAtZero: '=?'
       }
     };
   }

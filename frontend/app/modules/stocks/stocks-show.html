@@ -1,8 +1,10 @@
 <section class="stock-show">
   <section class="stock-summary">
     <h1>{{vm.stock.ticker}}</h1>
-    Average volume: {{vm.stock.average_volume}}<br/>
-    Number of losing days: {{vm.stock.losing_days_count}}
+    Average volume: {{vm.stock.average_volume.toFixed(2)}}<br/>
+    # Down Periods: {{vm.stock.losing_days_count}}<br/>
+    <br/>
+    <a data-ui-sref="stockerize.home">Back to list</a>
   </section>
   <section class="stock-data">
   <resolution-select  data-on-select="vm.selectResolution(resolution)"></resolution-select>
