@@ -17,7 +17,8 @@
   <section data-ng-repeat="ticker in vm.tickers">
     <h3>{{ticker}}</h3>
     <stock-chart data-ng-if="vm.stocksByTicker[ticker]"
-                 data-stock-prices="vm.stocksByTicker[ticker]"></stock-chart>
+                 data-stock-prices="vm.stocksByTicker[ticker]"
+                 data-begin-at-zero="true"></stock-chart>
   </section>
 
   <stock-prices-table data-stock-prices="vm.stockPrices" data-average="vm.resolution !== 'daily'"></stock-prices-table>
